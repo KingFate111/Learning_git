@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <style>
+        /* --- General Styling --- */
+        :root {
+            --primary-color: #3498db; /* Blue */
+            --secondary-color: #2c3e50; /* Dark Grey/Navy */
+            --light-color: #ecf0f1; /* Off-White */
+            --dark-color: #34495e; /* Darker Grey */
+            --font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* --- Header/Navigation --- */
+        header {
+            background: var(--secondary-color);
+            color: #ffffff;
+            padding: 15px 0;
+            border-bottom: 5px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            float: left;
+            font-size: 1.8em;
+            color: var(--primary-color);
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: #ffffff;
+            text-align: center;
+            padding: 100px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #hero h2 {
+            font-size: 3.5em;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            border-bottom: none;
+        }
+
+        #hero p {
+            font-size: 1.5em;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark-color);
+        }
+
+        /* --- Skills Section --- */
+        #skills {
+            text-align: center;
+            background: #f7f7f7;
+        }
+
+        .skills-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            background: #ffffff;
+            padding: 30px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-item h3 {
+            color: var(--primary-color);
+        }
+
+        /* --- Projects Section --- */
+        #projects {
+            background: var(--light-color);
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        .project-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--secondary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer .social-links a {
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #ffffff;
+        }
+
+        /* --- Responsive Design (Mobile First) --- */
+        @media (max-width: 600px) {
+            header h1, header nav {
+                float: none;
+                text-align: center;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            #hero h2 {
+                font-size: 2.5em;
+            }
+
+            .skills-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill-item {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Hi, I'm **[Your Name]**</h2>
+            <p>A passionate **[Your Role, e.g., Full Stack Developer/DevOps Engineer/Data Analyst]** dedicated to building and optimizing modern web solutions.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Frontend Development</h3>
+                    <p>React, JavaScript (ES6+), HTML5, CSS3, Redux, SASS.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Backend & Databases</h3>
+                    <p>Node.js, Python/Django, Express, REST APIs, PostgreSQL, MongoDB.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>DevOps & Cloud</h3>
+                    <p>Docker, Kubernetes, AWS/Azure, Git, CI/CD Pipelines (e.g., Jenkins).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200?text=Project+One" alt="Project One Image">
+                    <div class="project-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>A fully functional mock e-commerce site built with MERN stack, featuring payment integration and user authentication.</p>
+                        <a href="#" target="_blank">View Live Demo</a> | <a href="#" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200?text=Project+Two" alt="Project Two Image">
+                    <div class="project-content">
+                        <h3>CI/CD Pipeline Automation</h3>
+                        <p>Implemented an automated CI/CD pipeline using Jenkins and Docker to deploy a microservice application to a Kubernetes cluster.</p>
+                        <a href="#" target="_blank">View Docs</a> | <a href="#" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200?text=Project+Three" alt="Project Three Image">
+                    <div class="project-content">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>Interactive dashboard using Python (Pandas/Matplotlib) to analyze public transit data and display key metrics.</p>
+                        <a href="#" target="_blank">View Report</a> | <a href="#" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center; padding: 40px;">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="font-size: 1.2em;">I'm currently available for freelance work and new opportunities.</p>
+            <p><a href="mailto:your.email@example.com" class="btn" style="font-size: 1.2em;">Email Me Directly</a></p>
+            <p>Connect with me on social media:</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+                <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
